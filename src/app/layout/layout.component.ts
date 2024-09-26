@@ -2,6 +2,24 @@ import { Component, OnInit } from '@angular/core';
 import { ProductserviceService } from '../productservice.service';
 import { CommonModule } from '@angular/common';
 
+// product.model.ts
+export interface Product {
+  productId: number;
+  name: string;
+  description: string;
+  quantity: number;
+  price: number;
+  createDate: string;
+  categoryId: number;
+}
+
+export interface ProductResponse {
+  $id: string;
+  $values: Product[];
+}
+
+
+
 @Component({
   selector: 'app-layout',
   standalone: true,
@@ -20,14 +38,15 @@ export class LayoutComponent implements OnInit {
 
   fetchProducts(): void {
     this.productService.getProducts().subscribe(
-        (response) => {
-            console.log('API yanıtı:', response); // Yanıtı kontrol edin
-            this.products = Array.isArray(response) ? response : []; // Eğer dizi değilse boş bir dizi ata
-        },
-        (error) => {
-            console.error('Veri çekme hatası:', error);
-        }
+      (response: ProductResponse) => {
+        console.log('API yanıtı:', response); // Yanıtı kontrol edin
+        this.products = response.$values || []; // $values dizisini kullanın
+      },
+      (error) => {
+        console.error('Veri çekme hatası:', error);
+      }
     );
-}
+  }
+
 
 }

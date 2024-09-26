@@ -32,12 +32,44 @@
                 <form class="d-flex" role="search">
         
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
+                  <button class="btn btn-outline-info" type="submit">Search</button>
 
                 </form>
               </div>
             </div>
         </nav>
+
+
+        
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Ürün Adı</th>
+              <th scope="col">Açıklama</th>
+              <th scope="col">Stok Miktarı</th>
+              <th scope="col">Fiyat</th>
+              <th scope="col">
+                <button type="button" class="btn btn-outline-success" onclick="location.href='/addproduct'">Ekle</button>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of products; let i = index">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>{{ product.name }}</td>
+              <td>{{ product.description }}</td>
+              <td>{{ product.quantity }}</td>
+              <td>{{ product.price | currency }}</td>
+            <td>  
+                  <button type="button" class="btn btn-outline-danger">Sil</button>
+                  <button type="button" class="btn btn-outline-warning">Güncelle</button>
+            </td>
+                 
+            </tr>
+          </tbody>
+      </table>
+
 
         <footer>
           <div class="footeryazi">
