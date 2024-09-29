@@ -1,1 +1,19 @@
-<p>addcategory works!</p>
+<div class="diva1">
+  <h3>Yeni Kategori Ekle</h3>
+  <form (ngSubmit)="addCategory()">
+      <div class="mb-3">
+          <label for="name" class="form-label">Kategori Adı</label>
+          <input type="text" id="name" [(ngModel)]="newCategory.name" name="name" required class="form-control" />
+      </div>
+      <div class="mb-3">
+          <label for="description" class="form-label">Kategori Açıklaması</label>
+          <input type="text" id="description" [(ngModel)]="newCategory.description" name="description" required class="form-control" />
+      </div>
+      <div class="mb-3">
+          <label for="createDate" class="form-label">Oluşturulma Tarihi (YYYY-MM-DD)</label>
+          <input type="text" id="createDate" [(ngModel)]="newCategory.createDate" name="createDate" required class="form-control" />
+      </div>
+      <button type="button" class="btn btn-primary" (click)="addCategory()" >Ekle</button>
+      <button type="button" class="btn btn-light" onclick="location.href='/category'"> Geri Dön</button>
+  </form>
+</div>

@@ -1,0 +1,17 @@
+<div class="container-fluid mt-4">
+    <h2 class="mb-4">Kategori Güncelle</h2>
+    <form (ngSubmit)="updateCategory()">
+        <div class="mb-3">
+            <label for="categoryName" class="form-label">Kategori Adı:</label>
+            <input type="text" id="categoryName"  class="form-control" [(ngModel)]="category.name" name="categoryName" placeholder="Kategori adını girin" required>
+        </div>
+        <div class="mb-3">
+            <label for="categoryDescription" class="form-label">Kategori Açıklaması:</label>
+            <input type="text" id="categoryDescription" class="form-control" [(ngModel)]="category.description" name="categoryDescription" placeholder="Kategori açıklamasını girin" required>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-outline-success">Güncelle</button>
+            <button type="button" class="btn btn-outline-secondary ms-2" (click)="cancel()">İptal</button>
+        </div>
+    </form>
+</div>

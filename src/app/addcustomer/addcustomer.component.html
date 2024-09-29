@@ -1,1 +1,28 @@
-<p>addcustomer works!</p>
+<div class="diva1">
+    <h3>Yeni Kategori Ekle</h3>
+    <form (ngSubmit)="addCustomer()">
+        <div class="mb-3">
+            <label for="firstName" class="form-label">Kullanıcı Adı</label>
+            <input type="text" id="name" [(ngModel)]="newCustomer.firstName" name="firstName" required class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label for="lastName" class="form-label">Kullanıcı Soyadı</label>
+            <input type="text" id="lastName" [(ngModel)]="newCustomer.lastName" name="lastName" required class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label for="phoneNumber" class="form-label">Kullanıcı Telefon No:</label>
+            <input type="text" id="phoneNumber" [(ngModel)]="newCustomer.phoneNumber" name="phoneNumber" required class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Kullanıcı E-Posta</label>
+            <input type="text" id="email" [(ngModel)]="newCustomer.email" name="email" required class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label for="createDate" class="form-label">Oluşturulma Tarihi (YYYY-MM-DD)</label>
+            <input type="text" id="createDate" [(ngModel)]="newCustomer.createDate" name="createDate" required class="form-control" />
+        </div>
+        <button type="button" class="btn btn-primary" (click)="addCustomer()" >Ekle</button>
+        <button type="button" class="btn btn-light" onclick="location.href='/customer'"> Geri Dön</button>
+    </form>
+  </div>
+  

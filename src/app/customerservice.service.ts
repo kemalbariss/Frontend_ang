@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CustomerResponse } from './customer/customer.component';
+import { Customer, CustomerResponse } from './customer/customer.component';
 
 @Injectable({
   providedIn: 'root'
@@ -15,5 +15,14 @@ export class CustomerserviceService {
   //metod
   getCustomers(): Observable<CustomerResponse>{
     return this.http.get<CustomerResponse>(this.apiUrl);
+  }
+
+
+  addCustomer(customer : Customer):Observable<Customer>{
+    return this.http.post<Customer>(this.apiUrl,customer);
+  }
+
+  deleteCustomer(customerId: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${customerId}`);
   }
 }

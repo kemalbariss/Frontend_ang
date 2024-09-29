@@ -9,6 +9,10 @@ import { AddcategoryComponent } from './addcategory/addcategory.component';
 import { AddcustomerComponent } from './addcustomer/addcustomer.component';
 import { AddorderComponent } from './addorder/addorder.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
+import { UpdatecategoryComponent } from './updatecategory/updatecategory.component';
+import { UpdatecustomerComponent } from './updatecustomer/updatecustomer.component';
+import { UpdateorderComponent } from './updateorder/updateorder.component';
+import { UpdateproductComponent } from './updateproduct/updateproduct.component';
 
 export const routes: Routes = [
 
@@ -23,5 +27,11 @@ export const routes: Routes = [
     {path:'addcustomer', component: AddcustomerComponent},
     {path:'addorder', component: AddorderComponent},
     {path:'addproduct', component: AddproductComponent},
+    {path:'updatecategory', component: UpdatecategoryComponent},
+    {path:'updatecustomer', component: UpdatecustomerComponent},
+    {path:'updateorder', component: UpdateorderComponent},
+    {path:'updateproduct', component: UpdateproductComponent},
 
+
+    {path:'updatecategory/:id', component: UpdatecategoryComponent},
 ];

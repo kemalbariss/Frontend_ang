@@ -65,8 +65,8 @@
               <td>{{order.description}}</td>
               
             <td>  
-                  <button type="button" class="btn btn-outline-danger">Sil</button>
-                  <button type="button" class="btn btn-outline-warning">Güncelle</button>
+                  <button type="button" class="btn btn-outline-danger" (click)="deleteOrder(order.orderId)">Sil</button>
+                  <button type="button" class="btn btn-outline-warning" onclick="location.href='/updateorder'">Güncelle</button>
             </td>
                  
             </tr>

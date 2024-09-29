@@ -61,8 +61,8 @@
               <td>{{ category.name }}</td>
               <td>{{ category.description }}</td>
               <td>
-                <button type="button" class="btn btn-outline-danger">Sil</button>
-                <button type="button" class="btn btn-outline-warning">Güncelle</button>
+                <button type="button" class="btn btn-outline-danger" (click)="deleteCategory(category.categoryId)">Sil</button>
+                <button type="button" class="btn btn-outline-warning" (click)="navigateToUpdate(category.categoryId)">Güncelle</button>
               </td>
             </tr>
 

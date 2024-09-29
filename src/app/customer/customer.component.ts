@@ -9,7 +9,7 @@ export interface Customer{
   createDate:string;
   firstName:string;
   lastName:string;
-  phoneNumber:number;
+  phoneNumber:string;
   email:string;
 }
 export interface CustomerResponse{
@@ -26,7 +26,7 @@ export interface CustomerResponse{
   styleUrl: './customer.component.scss'
 })
 export class CustomerComponent implements OnInit{
-  customers:any[] = [];
+  customers:Customer[] = [];
 
   constructor(private customerService: CustomerserviceService){}
 
@@ -45,6 +45,21 @@ export class CustomerComponent implements OnInit{
         console.error('Veri Çekme hatası:',error) ;
       }
     );
+  }
+
+  deleteCustomer(customerId: number): void {
+    if (confirm("Bu kategoriyi silmek istediğinize emin misiniz?")) {
+      this.customerService.deleteCustomer(customerId).subscribe(
+        () => {
+          console.log('Kullanıcı silindi:', customerId);
+          // Kategoriyi silindikten sonra listeden çıkarmak için güncelle
+          this.fetchCustomers();
+        },
+        (error) => {
+          console.error('Silme hatası:', error);
+        }
+      );
+    }
   }
 
 }

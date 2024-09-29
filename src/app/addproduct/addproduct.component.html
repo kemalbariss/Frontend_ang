@@ -1,1 +1,36 @@
-<p>addproduct works!</p>
+<div class="diva1">
+    <h3>Yeni Ürün Ekle</h3>
+    <form (ngSubmit)="addProduct()">
+        <div class="mb-3">
+            <label for="name" class="form-label">Ürün Adı</label>
+            <input type="text" id="name" [(ngModel)]="newProduct.name" name="name" required class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Ürün Açıklaması</label>
+            <input type="text" id="description" [(ngModel)]="newProduct.description" name="description" required class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label for="createDate" class="form-label">Oluşturulma Tarihi (YYYY-MM-DD)</label>
+            <input type="text" id="createDate" [(ngModel)]="newProduct.createDate" name="createDate" required class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label for="quantity" class="form-label">Stok Miktarı</label>
+            <input type="number" id="quantity" [(ngModel)]="newProduct.quantity" name="quantity" required class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Fiyat</label>
+            <input type="number" id="price" [(ngModel)]="newProduct.price" name="price" required class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Resim</label>
+            <input type="text" id="image" [(ngModel)]="newProduct.image" name="image" required class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label for="categoryId" class="form-label">Kategori Id</label>
+            <input type="number" id="categoryId" [(ngModel)]="newProduct.categoryId" name="categoryId" required class="form-control" />
+        </div>
+        <button type="button" class="btn btn-primary" (click)="addProduct()" >Ekle</button>
+        <button type="button" class="btn btn-light" onclick="location.href='/product'"> Geri Dön</button>
+    </form>
+  </div>
+  

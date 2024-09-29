@@ -67,8 +67,8 @@
               <td>{{ customer.email }}</td>
               
             <td>  
-                  <button type="button" class="btn btn-outline-danger">Sil</button>
-                  <button type="button" class="btn btn-outline-warning">Güncelle</button>
+                  <button type="button" class="btn btn-outline-danger"(click)="deleteCustomer(customer.customerId)">Sil</button>
+                  <button type="button" class="btn btn-outline-warning" onclick="location.href='/updatecustomer'">Güncelle</button>
             </td>
                  
             </tr>

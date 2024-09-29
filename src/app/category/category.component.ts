@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { CategoryserviceService } from '../categoryservice.service';
-
+import { Router } from '@angular/router';
 
 
 export interface Category{
@@ -25,9 +25,11 @@ export interface CategoryResponse{
 })
 export class CategoryComponent implements OnInit{
 
-  categories: any[] = []; //kategoriler dizisi
+  categories: Category[] = []; //kategoriler dizisi
 
-  constructor(private categoryService:CategoryserviceService){} 
+  selectedCategory: Category | null = null;
+
+  constructor(private categoryService:CategoryserviceService,private router:Router){} 
 
   ngOnInit(): void {  
     this.fetchCategories();
@@ -47,4 +49,23 @@ export class CategoryComponent implements OnInit{
     );
   }
 
+
+  deleteCategory(categoryId: number): void {
+    if (confirm("Bu kategoriyi silmek istediğinize emin misiniz?")) {
+      this.categoryService.deleteCategory(categoryId).subscribe(
+        () => {
+          console.log('Kategori silindi:', categoryId);
+          // Kategoriyi silindikten sonra listeden çıkarmak için güncelle
+          this.fetchCategories();
+        },
+        (error) => {
+          console.error('Silme hatası:', error);
+        }
+      );
+    }
+  }
+ 
+ navigateToUpdate(categoryId:number){
+  this.router.navigate(['/updatecategory',categoryId])
+ }
 }

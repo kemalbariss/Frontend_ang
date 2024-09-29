@@ -30,7 +30,7 @@ export interface ProductResponse {
 })
 export class ProductComponent implements OnInit{
 
-  products: any[] = [];
+  products: Product[] = [];
 
   constructor(private productService: ProductserviceService) { }
 
@@ -48,6 +48,21 @@ export class ProductComponent implements OnInit{
         console.error('Veri çekme hatası:', error);
       }
     );
+  }
+
+  deleteProduct(productId: number): void {
+    if (confirm("Bu ürünü silmek istediğinize emin misiniz?")) {
+      this.productService.deleteProduct(productId).subscribe(
+        () => {
+          console.log('Ürün silindi:', productId);
+          
+          this.fetchProducts();
+        },
+        (error) => {
+          console.error('Silme hatası:', error);
+        }
+      );
+    }
   }
 
 }

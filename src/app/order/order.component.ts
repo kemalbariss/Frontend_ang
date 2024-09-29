@@ -5,9 +5,9 @@ import { OrderserviceService } from '../orderservice.service';
 
 export interface Order{
  
-  customerId:number;
-  productId:number;
-  status:boolean;
+  customerId:number|null;
+  productId:number|null;
+  status:boolean|null;
   address:string;
   description:string;
   orderId: number;
@@ -30,7 +30,7 @@ export interface OrderResponse{
 })
 export class OrderComponent implements OnInit{
 
-  orders:any[] = [];
+  orders:Order[] = [];
   constructor(private orderService:OrderserviceService){}
 
   ngOnInit(): void {
@@ -47,5 +47,19 @@ export class OrderComponent implements OnInit{
             console.error('Veri çekme hatası:',error)
           }
         );
+  }
+
+  deleteOrder(orderId: number): void {
+    if (confirm("Bu siparişi silmek istediğinize emin misiniz?")) {
+      this.orderService.deleteOrder(orderId).subscribe(
+        () => {
+          console.log('Sipariş silindi:', orderId);
+          this.fetchOrders(); // Siparişler listesini güncelle
+        },
+        (error) => {
+          console.error('Silme hatası:', error);
+        }
+      );
+    }
   }
 }

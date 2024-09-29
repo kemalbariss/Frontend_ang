@@ -28,7 +28,7 @@ export interface ProductResponse {
   styleUrls: ['./layout.component.scss'] 
 })
 export class LayoutComponent implements OnInit {
-  products: any[] = [];
+  products: Product[] = [];
 
   constructor(private productService: ProductserviceService) { }
 
