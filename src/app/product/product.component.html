@@ -63,7 +63,7 @@
               <td>{{ product.price | currency }}</td>
             <td>  
                   <button type="button" class="btn btn-outline-danger"(click)="deleteProduct(product.productId)">Sil</button>
-                  <button type="button" class="btn btn-outline-warning" onclick="location.href='/updateproduct'">Güncelle</button>
+                  <button type="button" class="btn btn-outline-warning" (click)="navigateToUpdate(product.productId)">Güncelle</button>
             </td>
                  
             </tr>

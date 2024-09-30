@@ -1,39 +1,40 @@
-<div class="diva1">
-    <h3>Yeni Sipariş Ekle</h3>
-    <form (ngSubmit)="addOrder()">
-      <div class="mb-3">
-        <label for="orderId" class="form-label">Sipariş ID</label>
-        <input type="number" id="orderId" [(ngModel)]="newOrder.orderId" name="orderId" required class="form-control" />
-      </div>
-      <div class="mb-3">
-        <label for="customerId" class="form-label">Müşteri ID</label>
-        <input type="number" id="customerId" [(ngModel)]="newOrder.customerId" name="customerId" required class="form-control" />
-      </div>
-      <div class="mb-3">
-        <label for="productId" class="form-label">Ürün ID</label>
-        <input type="number" id="productId" [(ngModel)]="newOrder.productId" name="productId" required class="form-control" />
-      </div>
-      <div class="mb-3">
-        <label for="status" class="form-label">Durum</label>
-        <select id="status" [(ngModel)]="newOrder.status" name="status" required class="form-control">
-          <option [value]="true">Aktif</option>
-          <option [value]="false">Pasif</option>
-        </select>
-      </div>
-      <div class="mb-3">
-        <label for="address" class="form-label">Adres</label>
-        <input type="text" id="address" [(ngModel)]="newOrder.address" name="address" required class="form-control" />
-      </div>
-      <div class="mb-3">
-        <label for="description" class="form-label">Açıklama</label>
-        <input type="text" id="description" [(ngModel)]="newOrder.description" name="description" required class="form-control" />
-      </div>
-      <div class="mb-3">
-        <label for="createDate" class="form-label">Oluşturulma Tarihi (YYYY-MM-DD)</label>
-        <input type="text" id="createDate" [(ngModel)]="newOrder.createDate" name="createDate" required class="form-control" />
-      </div>
-      <button type="submit" class="btn btn-primary">Ekle</button>
-      <button type="button" class="btn btn-light" onclick="location.href='/order'">Geri Dön</button>
-    </form>
-  </div>
-  
+  <div class="diva1">
+      <h3>Yeni Sipariş Ekle</h3>
+      <form (ngSubmit)="addOrder()">
+        
+        <div class="mb-3">
+          <label for="orderId" class="form-label">Sipariş ID</label>
+          <input type="number" id="orderId" [(ngModel)]="newOrder.orderId" name="orderId" required class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label for="customerId" class="form-label">Müşteri ID</label>
+          <input type="number" id="customerId" [(ngModel)]="newOrder.customerId" name="customerId" required class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label for="productId" class="form-label">Ürün ID</label>
+          <input type="number" id="productId" [(ngModel)]="newOrder.productId" name="productId" required class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label for="status" class="form-label">Durum</label>
+          <select id="status" [(ngModel)]="newOrder.status" name="status" required class="form-control">
+            <option [ngValue]="true">true</option>
+            <option [ngValue]="false">false</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="address" class="form-label">Adres</label>
+          <input type="text" id="address" [(ngModel)]="newOrder.address" name="address" required class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Açıklama</label>
+          <input type="text" id="description" [(ngModel)]="newOrder.description" name="description" required class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label for="createDate" class="form-label">Oluşturulma Tarihi (YYYY-MM-DD)</label>
+          <input type="text" id="createDate" [(ngModel)]="newOrder.createDate" name="createDate" required class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary" >Ekle</button>
+        <button type="button" class="btn btn-light" onclick="location.href='/order'">Geri Dön</button>
+      </form>
+    </div>
+    

@@ -68,7 +68,7 @@
               
             <td>  
                   <button type="button" class="btn btn-outline-danger"(click)="deleteCustomer(customer.customerId)">Sil</button>
-                  <button type="button" class="btn btn-outline-warning" onclick="location.href='/updatecustomer'">Güncelle</button>
+                  <button type="button" class="btn btn-outline-warning" (click)="navigateToUpdate(customer.customerId)">Güncelle</button>
             </td>
                  
             </tr>

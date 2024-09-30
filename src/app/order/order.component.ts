@@ -1,13 +1,15 @@
 import { Component,OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OrderserviceService } from '../orderservice.service';
+import { Router } from '@angular/router';
+import { Customer } from '../customer/customer.component';
 
 
 export interface Order{
  
   customerId:number|null;
   productId:number|null;
-  status:boolean|null;
+  status:boolean;
   address:string;
   description:string;
   orderId: number;
@@ -24,14 +26,17 @@ export interface OrderResponse{
 @Component({
   selector: 'app-order',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,],
   templateUrl: './order.component.html',
   styleUrl: './order.component.scss'
 })
 export class OrderComponent implements OnInit{
 
   orders:Order[] = [];
-  constructor(private orderService:OrderserviceService){}
+
+  selectedCustomer: Customer | null = null;
+
+  constructor(private orderService:OrderserviceService, private router:Router){}
 
   ngOnInit(): void {
     this.fetchOrders();
@@ -62,4 +67,8 @@ export class OrderComponent implements OnInit{
       );
     }
   }
+
+  navigateToUpdate(orderId:number){
+    this.router.navigate(['/updateorder',orderId])
+   }
 }

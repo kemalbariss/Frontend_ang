@@ -25,4 +25,12 @@ export class CustomerserviceService {
   deleteCustomer(customerId: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${customerId}`);
   }
+
+  updateCustomer(customerId: number, customer: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${customerId}`, customer);
+  }
+  
+  getCustomerById(customerId: string | null): Observable<Customer> {
+    return this.http.get<Customer>(`${this.apiUrl}/${customerId}`);
+  }
 }

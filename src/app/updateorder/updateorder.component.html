@@ -1,1 +1,36 @@
-<p>updateorder works!</p>
+<div class="container-fluid mt-4">
+    <h2 class="mb-4">Sipariş Güncelle</h2>
+    <form (ngSubmit)="updateOrder()">
+        <div class="mb-3">
+            <label for="orderId" class="form-label">Sipariş Id:</label>
+            <input type="text" id="orderId"  class="form-control" [(ngModel)]="order.customerId" name="orderId" placeholder="Sipariş Id'yi girin" required>
+        </div>
+        <div class="mb-3">
+            <label for="customerId" class="form-label">Kullanıcı Id:</label>
+            <input type="text" id="customerId"  class="form-control" [(ngModel)]="order.customerId" name="customerId" placeholder="Kullanıcı Id'yi girin" required>
+        </div>
+        <div class="mb-3">
+            <label for="productId" class="form-label">Ürün Id:</label>
+            <input type="text" id="productId" class="form-control" [(ngModel)]="order.productId" name="productId" placeholder="Ürün Id'yi girin" required>
+        </div>
+        <div class="mb-3">
+            <label for="status" class="form-label">Durum</label>
+            <select id="status" [(ngModel)]="order.status" name="status" required class="form-control">
+              <option [ngValue]="true">Aktif</option>
+              <option [ngValue]="false">Pasif</option>
+            </select>
+          </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Adres:</label>
+            <input type="text" id="address" class="form-control" [(ngModel)]="order.address" name="address" placeholder="Adres girin" required>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Açıklama:</label>
+            <input type="text" id="description" class="form-control" [(ngModel)]="order.description" name="description" placeholder="Açıklama girin" required>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-outline-success">Güncelle</button>
+            <button type="button" class="btn btn-outline-secondary ms-2" (click)="cancel()">İptal</button>
+        </div>
+    </form>
+</div>

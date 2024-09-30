@@ -1,1 +1,33 @@
-<p>updateproduct works!</p>
+<div class="container-fluid mt-4">
+    <h2 class="mb-4">Ürün Güncelle</h2>
+    <form (ngSubmit)="updateProduct()">
+        <div class="mb-3">
+            <label for="productName" class="form-label">Ürün Adı:</label>
+            <input type="text" id="productName"  class="form-control" [(ngModel)]="product.name" name="productName" placeholder="Ürün adını girin" required>
+        </div>
+        <div class="mb-3">
+            <label for="productDescription" class="form-label">Ürün Açıklaması:</label>
+            <input type="text" id="productDescription" class="form-control" [(ngModel)]="product.description" name="productDescription" placeholder="Ürün açıklamasını girin" required>
+        </div>
+        <div class="mb-3">
+            <label for="quantity" class="form-label">Ürün miktar:</label>
+            <input type="text" id="quantity" class="form-control" [(ngModel)]="product.quantity" name="quantity" placeholder="Ürün miktar girin" required>
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Ürün Fiyat:</label>
+            <input type="text" id="price" class="form-control" [(ngModel)]="product.price" name="price" placeholder="Ürün fiyat girin" required>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Ürün Resim:</label>
+            <input type="text" id="image" class="form-control" [(ngModel)]="product.image" name="image" placeholder="Ürün resim girin" required>
+        </div>
+        <div class="mb-3">
+            <label for="categoryId" class="form-label">Kategori Id:</label>
+            <input type="text" id="categoryId" class="form-control" [(ngModel)]="product.categoryId" name="categoryId" placeholder="Kategori Id girin" required>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-outline-success">Güncelle</button>
+            <button type="button" class="btn btn-outline-secondary ms-2" (click)="cancel()">İptal</button>
+        </div>
+    </form>
+</div>

@@ -26,4 +26,12 @@
     deleteOrder(orderId: number): Observable<void> {
       return this.http.delete<void>(`${this.apiUrl}/${orderId}`);
     }
+
+    updateOrder(orderId: number, order: any): Observable<any> {
+      return this.http.put<any>(`${this.apiUrl}/${orderId}`, order);
+    }
+    
+    getOrderById(orderId: string | null): Observable<Order> {
+      return this.http.get<Order>(`${this.apiUrl}/${orderId}`);
+    }
   }

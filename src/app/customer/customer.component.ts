@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CustomerserviceService } from '../customerservice.service';
+import { Router } from '@angular/router';
 
 
 //model
@@ -28,7 +29,9 @@ export interface CustomerResponse{
 export class CustomerComponent implements OnInit{
   customers:Customer[] = [];
 
-  constructor(private customerService: CustomerserviceService){}
+  selectedCustomer: Customer | null = null;
+
+  constructor(private customerService: CustomerserviceService,private router:Router){}
 
   ngOnInit(): void {
     this.fetchCustomers();
@@ -61,5 +64,9 @@ export class CustomerComponent implements OnInit{
       );
     }
   }
+
+  navigateToUpdate(customerId:number){
+    this.router.navigate(['/updatecustomer',customerId])
+   }
 
 }

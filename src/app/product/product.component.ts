@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ProductserviceService } from '../productservice.service';
-
+import { Router } from '@angular/router';
 
 
 // product.model.ts
@@ -32,7 +32,7 @@ export class ProductComponent implements OnInit{
 
   products: Product[] = [];
 
-  constructor(private productService: ProductserviceService) { }
+  constructor(private productService: ProductserviceService,private router:Router) { }
 
   ngOnInit(): void {
     this.fetchProducts();
@@ -64,5 +64,9 @@ export class ProductComponent implements OnInit{
       );
     }
   }
+
+  navigateToUpdate(productId:number){
+    this.router.navigate(['/updateproduct',productId])
+   }
 
 }

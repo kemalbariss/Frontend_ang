@@ -1,1 +1,27 @@
-<p>updatecustomer works!</p>
+<div class="container-fluid mt-4">
+    <h2 class="mb-4">
+        Kullanıcı Güncelle
+    </h2>
+    <form (ngSubmit)="updateCustomer()">
+        <div class="mb-3">
+            <label for="firstName" class="form-label">Kullanıcı Adı:</label>
+            <input type="text" id="firstName" class="form-control" [(ngModel)]="customer.firstName" name="firstName" placeholder="Lütfen Kullanıcı ismi giriniz." required>
+        </div>
+        <div class="mb-3">
+            <label for="lastName" class="form-label">Kullanıcı Soyadı:</label>
+            <input type="text" id="lastName" class="form-control" [(ngModel)]="customer.lastName" name="lastName" placeholder="Lütfen Kullanıcı Soyismi giriniz." required>
+        </div>
+        <div class="mb-3">
+            <label for="phoneNumber" class="form-label">Telefon No:</label>
+            <input type="text" id="phoneNumber" class="form-control" [(ngModel)]="customer.phoneNumber" name="phoneNumber" placeholder="Lütfen Telefon no giriniz." required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">E-Posta:</label>
+            <input type="text" id="email" class="form-control" [(ngModel)]="customer.email" name="email" placeholder="Lütfen E-Posta giriniz." required>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-outline-success">Güncelle</button>
+            <button type="button" class="btn btn-outline-secondary ms-2" (click)="cancel()">İptal</button>
+        </div>
+    </form>
+</div>
