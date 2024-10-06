@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductserviceService } from '../productservice.service';
 import { CommonModule } from '@angular/common';
+import { LoginserviceService } from '../loginservice.service';
+import { Router } from '@angular/router';
 
 // product.model.ts
 export interface Product {
@@ -29,11 +31,23 @@ export interface ProductResponse {
 })
 export class LayoutComponent implements OnInit {
   products: Product[] = [];
+  userEmail:string | null = null;
 
-  constructor(private productService: ProductserviceService) { }
+  constructor(
+    private productService: ProductserviceService,
+    private loginService:LoginserviceService,
+    private router : Router,
+  ) { }
 
   ngOnInit(): void {
+    this.userEmail = localStorage.getItem('userEmail');
     this.fetchProducts();
+   
+  }
+
+   logout():void{
+    this.loginService.logout();
+      this.router.navigate(['/login']);
   }
 
   fetchProducts(): void {
@@ -48,5 +62,5 @@ export class LayoutComponent implements OnInit {
     );
   }
 
-
+  
 }

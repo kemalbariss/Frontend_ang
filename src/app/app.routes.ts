@@ -19,8 +19,8 @@ export const routes: Routes = [
   
     {path:'category', component: CategoryComponent},
     {path:'customer', component: CustomerComponent},
-    {path:'', component: LayoutComponent},
-    {path:'login', component: LoginComponent},
+    {path:'layout', component: LayoutComponent,},
+    {path: '', component: LoginComponent },
     {path:'order', component: OrderComponent},
     {path:'product', component: ProductComponent},
     {path:'addcategory', component: AddcategoryComponent},
@@ -37,4 +37,5 @@ export const routes: Routes = [
     {path:'updatecustomer/:id', component: UpdatecustomerComponent},
     {path:'updateorder/:id', component: UpdateorderComponent},
     {path:'updateproduct/:id', component: UpdateproductComponent},
+    {path:'**', component: LoginComponent},
 ];

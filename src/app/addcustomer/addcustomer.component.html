@@ -1,5 +1,5 @@
 <div class="diva1">
-    <h3>Yeni Kategori Ekle</h3>
+    <h3>Yeni Kullanıcı Ekle</h3>
     <form (ngSubmit)="addCustomer()">
         <div class="mb-3">
             <label for="firstName" class="form-label">Kullanıcı Adı</label>
@@ -21,6 +21,7 @@
             <label for="createDate" class="form-label">Oluşturulma Tarihi (YYYY-MM-DD)</label>
             <input type="text" id="createDate" [(ngModel)]="newCustomer.createDate" name="createDate" required class="form-control" />
         </div>
+        
         <button type="button" class="btn btn-primary" (click)="addCustomer()" >Ekle</button>
         <button type="button" class="btn btn-light" onclick="location.href='/customer'"> Geri Dön</button>
     </form>

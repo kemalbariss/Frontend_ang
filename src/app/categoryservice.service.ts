@@ -31,7 +31,7 @@
       return this.http.put<any>(`${this.apiUrl}/${categoryId}`, category);
     }
     
-    getCategoryById(categoryId: string | null): Observable<Category> {
+    getCategoryById(categoryId: string | null): Observable<Category> { //Observable, verinin geleceği zamanı veya kaynağını bilmeden, veriyi almak için dinamik bir yapı sağlar.
       return this.http.get<Category>(`${this.apiUrl}/${categoryId}`);
     }
     

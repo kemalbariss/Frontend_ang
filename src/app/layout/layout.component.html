@@ -6,7 +6,7 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/">Ana Sayfa</a>
+        <a class="navbar-brand" href="/layout">Ana Sayfa</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,7 +25,9 @@
                     <a class="nav-link" href="/customer">Kullanıcılar</a>
                 </li>
             </ul>
+            <span class="navbar-text me-3" *ngIf="userEmail">{{userEmail}}</span>
             <a class="nav-link" href="/login">Login</a>
+            <a class="nav-link" href="/login" (click)="logout()">Logout</a>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-info" type="submit">Search</button>

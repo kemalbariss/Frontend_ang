@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class UpdatecustomerComponent implements OnInit{
 
-  customer: any ={firsName:'',lastName:'',phoneNumber:'',email:''}
+  customer: any ={createDate:'',firsName:'',lastName:'',phoneNumber:'',email:''}
 
   constructor(
     private route: ActivatedRoute,
